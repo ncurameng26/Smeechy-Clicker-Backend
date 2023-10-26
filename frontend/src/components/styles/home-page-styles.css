@@ -1,7 +1,6 @@
 body{
     margin-left: auto;
     margin-right: auto;
-    color: yellow;
     text-align: center;
 }
 
@@ -12,5 +11,14 @@ body{
 }
 
 .peachButton{
-    background-color: yellow;
+    background-size: cover; 
+    height: auto;
+    width: auto;
 }
+
+.peachButton button{
+    background-image: url(https://picsum.photos/400/400);
+    height: 200px;
+    width: 200px;
+}
+

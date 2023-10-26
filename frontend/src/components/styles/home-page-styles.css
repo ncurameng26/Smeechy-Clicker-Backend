@@ -1,0 +1,16 @@
+body{
+    margin-left: auto;
+    margin-right: auto;
+    color: yellow;
+    text-align: center;
+}
+
+.smeechyTitle{
+    font-size: 100px;
+    color: blue;
+    text-align:center;
+}
+
+.peachButton{
+    background-color: yellow;
+}

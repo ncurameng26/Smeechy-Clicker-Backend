@@ -17,22 +17,28 @@ class Scoreboard extends React.Component {
         details: data
       })
     })
-    .catch(err => { })
+    .catch(err => {"error"})
 }
 
   render(){
     return(
       <>     
-        <header> Data Generated From Django </header>
         <hr></hr>
-        {this.state.details.map((output, id) => (
-          <div key = {id}>
-            <div>
+        <header> SCOREBOARD </header>
+        <div className="dataWrapper">
+
+          {this.state.details.map((output, id) => (
+            <div key = {id}>
+              <div>
+                <div className="item-1"> <h1> Profile </h1> </div>
+                <div className="item-2"> <h1> Name </h1> </div>
+                <div className="item-3"> <h1> Cookies </h1> </div>
                 <h2> Name : {output.name}</h2>  
                 <h3> Cookies: {output.description}</h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </>
       )
   }

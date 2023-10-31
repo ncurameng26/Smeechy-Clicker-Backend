@@ -2,6 +2,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    background-color: slategray;
 }
 
 .smeechyTitle{
@@ -16,9 +17,34 @@ body{
     width: auto;
 }
 
+
 .peachButton button{
     background-image: url(https://picsum.photos/400/400);
     height: 200px;
     width: 200px;
+    font-size: 30px;
 }
 
+.buttonContainer{
+    width: auto;
+}
+
+.buttonContainer button{
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 50px;
+}
+
+.topText{
+    font-size: 80px;
+}
+
+.headerContainer{
+    margin-bottom: 50px;
+}
+
+h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

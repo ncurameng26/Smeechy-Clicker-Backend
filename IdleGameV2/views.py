@@ -7,7 +7,7 @@ from rest_framework.response import Response
 class ScoreView(APIView):
     def get(self, request):
         output = [{"name": output.name, 
-                   "description" : output.description}
+                   "cookie" : output.cookie}
                     for output in Scoreboard.objects.all()]
         return Response(output)
          

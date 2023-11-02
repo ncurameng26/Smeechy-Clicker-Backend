@@ -1,13 +1,5 @@
 .cookie_image{
-    background-color: yellow;
-    background-image: url(https://picsum.photos/400/400);
-    width: auto;
-    height: auto;
-}
-
-.cookie_image{
-    background-image: url(https://picsum.photos/400/400);
-    height: 200px;
-    width: 200px;
-    font-size: 30px;
+    background-image: url(../../assets/cookie-png-transparent-images-background-23.png);
+    width: 320px;
+    height: 320px;
 }

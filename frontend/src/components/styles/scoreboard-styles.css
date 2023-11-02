@@ -7,8 +7,7 @@ header{
 }
 
 .dataWrapper{
-    display: flex;
-    background-color: yellow;
+    background-color: black;
     justify-content: space-evenly;
     height: 400px;
 }
@@ -24,15 +23,9 @@ header{
 
 .item-1{
     background-color: aqua;
-    padding-left: 20%;
 }
 
 .item-2{
-    padding-left: 20%;
-    background-color: navy;
+    background-color: blueviolet;
 
-}
-
-.item-3{
-    flex-grow: 1;
 }

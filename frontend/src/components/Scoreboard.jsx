@@ -28,13 +28,11 @@ class Scoreboard extends React.Component {
         <div className="dataWrapper">
 
           {this.state.details.map((output, id) => (
-            <div key = {id}>
+            <div key = {id}>  
               <div>
-                <div className="item-1"> <h1> Profile </h1> </div>
-                <div className="item-2"> <h1> Name </h1> </div>
-                <div className="item-3"> <h1> Cookies </h1> </div>
-                <h2> Name : {output.name}</h2>  
-                <h3> Cookies: {output.description}</h3>
+                <div className="item-2">               
+                  <h2> {id + 1}. {output.name} wit {output.cookie} Cookies</h2>  
+                  </div>
               </div>
             </div>
           ))}

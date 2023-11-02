@@ -7,9 +7,11 @@ header{
 }
 
 .dataWrapper{
-    background-color: black;
     justify-content: space-evenly;
     height: 400px;
+    text-align: left;
+    width: 30%;
+    margin: auto;
 }
 
 .dataWrapper h1{
@@ -21,11 +23,8 @@ header{
     color: white;
 }
 
-.item-1{
-    background-color: aqua;
-}
 
 .item-2{
-    background-color: blueviolet;
+    padding-left: 20%;
 
 }

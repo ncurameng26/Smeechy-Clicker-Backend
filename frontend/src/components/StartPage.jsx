@@ -2,6 +2,7 @@
 import React from "react";
 import "./styles/home-page-styles.css"
 import Cookies from "./Cookies";
+import Scoreboard from "./Scoreboard";
 
 
 class StartPage extends React.Component {
@@ -14,6 +15,7 @@ class StartPage extends React.Component {
                 </div>
      
             <Cookies />
+            <Scoreboard />
 
             {/* <SignUp /> */}
 

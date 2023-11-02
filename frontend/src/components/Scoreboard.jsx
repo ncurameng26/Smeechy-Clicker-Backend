@@ -23,7 +23,6 @@ class Scoreboard extends React.Component {
   render(){
     return(
       <>     
-        <hr></hr>
         <header> SCOREBOARD </header>
         <div className="dataWrapper">
 

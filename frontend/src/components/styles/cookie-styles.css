@@ -1,5 +1,10 @@
 .cookie_image{
-    background-image: url(../../assets/cookie-png-transparent-images-background-23.png);
+    background-image: url(../../assets/cookie.png);
     width: 320px;
     height: 320px;
+}
+
+.upgrade-container{
+    display: flex;
+    justify-content: space-evenly;
 }

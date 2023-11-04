@@ -10,8 +10,7 @@ class StartPage extends React.Component {
         return(
             <>
                 <div className="headerContainer">
-                    <h1 className = "topText"> Welcome to  </h1>
-                    <h1 className= "smeechyTitle"> Smeechy Clicker  </h1>
+                    <h1 className= "smeechyTitle"> Welcome to Smeechy Clicker  </h1>
                 </div>
      
             <Cookies />

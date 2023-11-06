@@ -7,15 +7,24 @@ import clicker from "../assets/clicker.png"
 import divineDogs from "../assets/divineDog.gif"
 import tesla from "../assets/tesla.png"
 import rabbit from "../assets/rabbitEscape.gif"
-import Popup from "./ShopPopup"
+import ShadowShopPopUp from "./ShopPopup"
 import elephant from "../assets/maxElephant.gif"
+import TempShadow from "./TempShadowGarden"
 
 // import { buyDivineDog } from "./ShopPopup"
+
+//call back function thats called by child componennt]
+
+
 
 
 
 
 const Cookies = () => {
+
+  function updateShadowList(shadowName){
+    console.log('update employee inside of cookies.jsx')
+  }
 
   const [cookiesPerSecond, setCookiesPerSecond] = useState(0)
   const [cookieCount, setCookieCount] = useState(100)
@@ -34,7 +43,6 @@ const Cookies = () => {
 
   useEffect(() => {
     const interval = setInterval(() => clickCookiePerSecond(), 1000);
-    console.log("cookieCount")
     return () => {
       clearInterval(interval);
     };
@@ -77,11 +85,20 @@ const Cookies = () => {
     <div>
       <h1> Cookies per click : {cookiePerClick} </h1>
       <h1> Cookies per second : {cookiesPerSecond} </h1>
+    
         <div className="cookie_container">
             <img id = "cookieID" src= { peach } alt="cookie" onClick={() => clickCookie()}width="400" height="400"></img>
             <h1> Cookies: {Math.floor(cookieCount)} </h1>
+            
+            <div>
+            <TempShadow>
+              <h1> cookie Count = {cookieCount}</h1> 
+            </TempShadow>
+            </div>
+
 
             <div className="total-upgrade-container">
+
 
               {/* SHADOW GARDEN*/}
               <div className="upgrade-container">
@@ -91,9 +108,9 @@ const Cookies = () => {
                     <h1> Clickers: {numShadows}</h1>
                     <h1> Price: {costClicker}</h1>
         
-                    <Popup trigger = {openShop} setTrigger ={setOpenShop}>
+                    <ShadowShopPopUp trigger = {openShop} setTrigger ={setOpenShop}>
                       <h1> Chimera Shadow Garden </h1>
-                    </Popup>
+                    </ShadowShopPopUp>
 
                   </div>
                 </div>
@@ -102,13 +119,8 @@ const Cookies = () => {
                     <img id = "divineDogs" src={ divineDogs } alt="divineDogs"></img>
                   <img id = "rabbit" src={ rabbit } alt="rabbit"></img>
                   <img id = "rabbit" src={ elephant } alt="rabbit"></img>
-
                 </div>
-                  
-
-                  
-
-                </div>
+              </div>
               {/* SHADOW GARDEN END*/}
 
 

@@ -14,7 +14,7 @@ import ShadowGarden from './ShadowGarden'
 
 //this will only store the cookie information instead of the building info then i will use props to send how many cookies each component need to subtract from the total cookie count in order to decremenet by a certain amount. the rest will be handled in each individual comp
 
-const Cookies = (props) => {
+const Cookies = () => {
 
   const [cookiesPerSecond, setCookiesPerSecond] = useState(0)
   const [cookieCount, setCookieCount] = useState(100)
@@ -32,7 +32,10 @@ const Cookies = (props) => {
 
   const clickCookie = () => {
     setCookieCount((cookieCount => cookieCount + cookiePerClick))
-    console.log(props.children)
+  }
+
+  function updateCookie(newData) {
+    console.log('update Cookie in cookies')
   }
 
 
@@ -46,7 +49,7 @@ const Cookies = (props) => {
         <h1> Cookies: {Math.floor(cookieCount)} </h1>
 
         <div className="total-upgrade-container">
-          <ShadowGarden> {cookieCount} </ShadowGarden>
+          <ShadowGarden />
 
 
 

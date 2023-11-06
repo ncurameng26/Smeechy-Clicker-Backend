@@ -6,7 +6,7 @@ import elephant from "../assets/maxElephant.gif"
 import divineDogs from "../assets/divineDog.gif"
 import Cookie from "./Cookies"
 
-const ShadowGarden = () => {
+const ShadowGarden = (props) => {
 
     const [numShadows, setNumShadows] = useState(0)
     const [costShadows, setCostShadows] = useState(100)

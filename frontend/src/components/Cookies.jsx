@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react'
 import "./styles/cookie-styles.css"
 import "./styles/upgrade-styles.css"
 import peach from "../assets/peach.png"
-import clicker from "../assets/clicker.png"
 import divineDogs from "../assets/divineDog.gif"
 import tesla from "../assets/tesla.png"
-import rabbit from "../assets/rabbitEscape.gif"
-import Popup from "./ShopPopup"
-import elephant from "../assets/maxElephant.gif"
+
+import bandaid from "../assets/bandage.gif"
+
+
+import pancakes from "../assets/pancakes.png"
 
 // import { buyDivineDog } from "./ShopPopup"
 
@@ -18,24 +19,29 @@ import elephant from "../assets/maxElephant.gif"
 const Cookies = (props) => {
 
   const [cookiesPerSecond, setCookiesPerSecond] = useState(0)
-  const [cookieCount, setCookieCount] = useState(100)
+  const [cookieCount, setCookieCount] = useState(1000000)
   const [cookiePerClick, setCookiePerClick] = useState(1)
 
   //ShadowGarden States
   const [numShadows, setNumShadows] = useState(0)
-  const [costClicker, setCostClicker] = useState(100)
-  const [selectedShadow, setSelectedShadow] = useState("")
+  const [costShadow, setCostShadow] = useState(100)
+  // const [selectedShadow, setSelectedShadow] = useState("")
   // const [shadowList, setShadowList] = useState([])
 
-  const [openShop, setOpenShop] = useState(false)
+  //Tesla upgrade States
+  const [numTesla, setNumTesla] = useState(1)
+  const [costTesla, setCostTesla] = useState(150)
 
-  //Click upgrade States
-  const [numClickUpgrade, setNumClickUpgrade] = useState(1)
-  const [costClickUpgrade, setCostClickUpgrade] = useState(150)
+  //Food Upgrade States
+  const [numFood, setNumFood] = useState(0)
+  const [costFood, setCostFood] = useState(200)
+
+  //medBay Upgrade States
+  const [numMedbay, setnumMedbay] = useState(0)
+  const [costMedbay, setCostMedbay] = useState(300)
 
   useEffect(() => {
     const interval = setInterval(() => clickCookiePerSecond(), 1000);
-    console.log("cookieCount")
     return () => {
       clearInterval(interval);
     };
@@ -49,25 +55,48 @@ const Cookies = (props) => {
     setCookieCount((cookieCount => cookieCount + cookiePerClick))
   }
 
-  const buyClickUpgrade = () => {
-    if (cookieCount >= costClickUpgrade) {
-      setNumClickUpgrade(n => n + 1)
-      setCookiePerClick(numClickUpgrade => numClickUpgrade + 1)
-      setCostClickUpgrade(Math.floor(costClickUpgrade * 1.17))
-      setCookieCount(cookieCount - costClickUpgrade)
+  const buyMedbay = () => {
+    if (cookieCount >= costMedbay) {
+      setnumMedbay(n => n + 1)
+      setCookiesPerSecond(cookiesPerSecond => cookiesPerSecond + 20)
+      setCostMedbay(Math.floor(costMedbay * 1.399))
+      setCookieCount(cookieCount - costMedbay)
     }
     else {
       alert("not enough cookies")
     }
   }
 
-  const buyClicker = () => {
-    if (cookieCount >= costClicker) {
+  const buyTesla = () => {
+    if (cookieCount >= costTesla) {
+      setNumTesla(n => n + 1)
+      setCookiePerClick(numTesla => numTesla + 1)
+      setCostTesla(Math.floor(costTesla * 1.5))
+      setCookieCount(cookieCount - costTesla)
+    }
+    else {
+      alert("not enough cookies")
+    }
+  }
+
+  const buyFood = () => {
+    if (cookieCount >= costFood) {
+      setNumFood(n => n + 1)
+      setCookiesPerSecond(cookiesPerSecond => cookiesPerSecond + 3)
+      setCostFood(Math.floor(costFood * 1.7))
+      setCookieCount(cookieCount - costFood)
+    }
+    else {
+      alert("not enough cookies")
+    }
+  }
+
+  const buyShadow = () => {
+    if (cookieCount >= costShadow) {
       setNumShadows(numShadows => numShadows + 1)
-      setCostClicker(Math.floor(costClicker * 1.17))
-      setCookieCount(cookieCount => cookieCount - costClicker)
+      setCostShadow(Math.floor(costShadow * 1.2))
+      setCookieCount(cookieCount => cookieCount - costShadow)
       setCookiesPerSecond(cookiesPerSecond => cookiesPerSecond + 1)
-      setOpenShop(true)
     }
     else {
       alert("not enough cookies")
@@ -78,7 +107,6 @@ const Cookies = (props) => {
     <div>
       <h1> Cookies per click : {cookiePerClick} </h1>
       <h1> Cookies per second : {cookiesPerSecond} </h1>
-      <h1> Selected Shadow {selectedShadow} </h1>
 
       <div className="cookie_container">
         <img id="cookieID" src={peach} alt="cookie" onClick={() => clickCookie()} width="400" height="400"></img>
@@ -90,22 +118,21 @@ const Cookies = (props) => {
           <div className="upgrade-container">
             <div className="upgrade-button">
               <div className="clicker">
-                <img id="clickerID" src={clicker} alt="clicker" onClick={() => buyClicker()}></img>
-                <h1> Clickers: {numShadows}</h1>
-                <h1> Price: {costClicker}</h1>
+                <img id="clickerID" src={divineDogs} alt="clicker" onClick={() => buyShadow()}></img>
+                <h1> Shadows: {numShadows}</h1>
+                <h1> Price: {costShadow}</h1>
 
-
+                {/* 
                 <Popup trigger={openShop} setTrigger={setOpenShop} returnShadow={setSelectedShadow}>
                   <h1> Chimera Shadow Garden </h1>
-                </Popup>
+                </Popup> */}
 
               </div>
             </div>
             <div className="upgrade-zone">
               <h1> Jesse's Shadow Garden </h1>
               <img id="divineDogs" src={divineDogs} alt="divineDogs"></img>
-              <img id="rabbit" src={rabbit} alt="rabbit"></img>
-              <img id="rabbit" src={elephant} alt="rabbit"></img>
+
 
             </div>
 
@@ -121,9 +148,9 @@ const Cookies = (props) => {
           <div className="upgrade-container">
             <div className="upgrade-button-tesla">
               <div className="clicker-upgrade">
-                <img id="teslaUpgradeID" src={tesla} alt="clickUpgrade" onClick={() => buyClickUpgrade()}></img>
-                <h1> click Upgrade {numClickUpgrade}</h1>
-                <h1> Price: {costClickUpgrade}</h1>
+                <img id="teslaUpgradeID" src={tesla} alt="Tesla" onClick={() => buyTesla()}></img>
+                <h1> Teslas: {numTesla}</h1>
+                <h1> Price: {costTesla}</h1>
               </div>
             </div>
             <div className="upgrade-zone">
@@ -139,16 +166,17 @@ const Cookies = (props) => {
           <div className="upgrade-container">
             <div className="upgrade-button">
               <div className="clicker-upgrade">
-                <img id="clickUpgradeID" src={clicker} alt="clickUpgrade" onClick={() => buyClickUpgrade()}></img>
-                <h1> click Upgrade {numClickUpgrade}</h1>
-                <h1> Price: {costClickUpgrade}</h1>
+                <img id="food" src={pancakes} alt="food" onClick={() => buyFood()}></img>
+                <h1> Food : {numFood}</h1>
+                <h1> Price: {costFood}</h1>
               </div>
             </div>
             <div className="upgrade-zone">
               <div className="click-upgrade">
                 <div className="dansDiner">
                   <h1> Dan's Diner </h1>
-                  <img id="food" alt="food" width="200" height="150"></img>
+                  <img id="food" src={pancakes} alt="food" width="200" height="150"></img>
+
                 </div>
               </div>
             </div>
@@ -159,15 +187,16 @@ const Cookies = (props) => {
           <div className="upgrade-container">
             <div className="upgrade-button">
               <div className="clicker-upgrade">
-                <img id="clickUpgradeID" src={clicker} alt="clickUpgrade" onClick={() => buyClickUpgrade()}></img>
-                <h1> click Upgrade {numClickUpgrade}</h1>
-                <h1> Price: {costClickUpgrade}</h1>
+                <img id="MedBays" src={bandaid} alt="MedBay" onClick={() => buyMedbay()}></img>
+                <h1> MedBays: {numMedbay}</h1>
+                <h1> Price: {costMedbay}</h1>
               </div>
             </div>
             <div className="upgrade-zone">
               <div className="click-upgrade">
                 <h1> Bricker's Medbay </h1>
-                <img id="medbay" alt="medbay" width="200" height="150"></img>
+                <img id="MedBays" src={bandaid} alt="MedBay" width="200" height="150"></img>
+
               </div>
             </div>
           </div>

@@ -11,12 +11,7 @@ const ShopPopup = (props) => {
 
     //make a string thats empty and when you click a button it changes the string to the name oft he titem and returns that so that 
 
-    function returnShadow() {
-        return (selectedShadow)
-    }
-
-
-    var [selectedShadow, setSelectedShadow] = useState("")
+    const [selectedShadow, setSelectedShadow] = useState("")
 
     return (props.trigger) ? (
         <div className='popup'>

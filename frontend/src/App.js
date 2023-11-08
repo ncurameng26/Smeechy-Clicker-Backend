@@ -1,16 +1,16 @@
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css';
 import React from 'react';
 import StartPage from './components/StartPage';
 
 
 class App extends React.Component {
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <StartPage />
       </div>
-      
+
     )
   }
 }

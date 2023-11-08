@@ -9,6 +9,7 @@ import tesla from "../assets/tesla.png"
 import rabbit from "../assets/rabbitEscape.gif"
 import Popup from "./ShopPopup"
 import elephant from "../assets/maxElephant.gif"
+import ShadowGarden from './ShadowGarden'
 
 // import { buyDivineDog } from "./ShopPopup"
 
@@ -26,8 +27,6 @@ const Cookies = (props) => {
   const [costClicker, setCostClicker] = useState(100)
   const [selectedShadow, setSelectedShadow] = useState("")
   // const [shadowList, setShadowList] = useState([])
-
-  const [openShop, setOpenShop] = useState(false)
 
   //Click upgrade States
   const [numClickUpgrade, setNumClickUpgrade] = useState(1)
@@ -67,7 +66,6 @@ const Cookies = (props) => {
       setCostClicker(Math.floor(costClicker * 1.17))
       setCookieCount(cookieCount => cookieCount - costClicker)
       setCookiesPerSecond(cookiesPerSecond => cookiesPerSecond + 1)
-      setOpenShop(true)
     }
     else {
       alert("not enough cookies")
@@ -78,100 +76,15 @@ const Cookies = (props) => {
     <div>
       <h1> Cookies per click : {cookiePerClick} </h1>
       <h1> Cookies per second : {cookiesPerSecond} </h1>
-      <h1> Selected Shadow {selectedShadow} </h1>
 
       <div className="cookie_container">
         <img id="cookieID" src={peach} alt="cookie" onClick={() => clickCookie()} width="400" height="400"></img>
         <h1> Cookies: {Math.floor(cookieCount)} </h1>
 
         <div className="total-upgrade-container">
-
-          {/* SHADOW GARDEN*/}
-          <div className="upgrade-container">
-            <div className="upgrade-button">
-              <div className="clicker">
-                <img id="clickerID" src={clicker} alt="clicker" onClick={() => buyClicker()}></img>
-                <h1> Clickers: {numShadows}</h1>
-                <h1> Price: {costClicker}</h1>
+          <ShadowGarden />
 
 
-                <Popup trigger={openShop} setTrigger={setOpenShop} returnShadow={setSelectedShadow}>
-                  <h1> Chimera Shadow Garden </h1>
-                </Popup>
-
-              </div>
-            </div>
-            <div className="upgrade-zone">
-              <h1> Jesse's Shadow Garden </h1>
-              <img id="divineDogs" src={divineDogs} alt="divineDogs"></img>
-              <img id="rabbit" src={rabbit} alt="rabbit"></img>
-              <img id="rabbit" src={elephant} alt="rabbit"></img>
-
-            </div>
-
-
-
-
-          </div>
-          {/* SHADOW GARDEN END*/}
-
-
-
-          {/* TESLA SHOP END*/}
-          <div className="upgrade-container">
-            <div className="upgrade-button-tesla">
-              <div className="clicker-upgrade">
-                <img id="teslaUpgradeID" src={tesla} alt="clickUpgrade" onClick={() => buyClickUpgrade()}></img>
-                <h1> click Upgrade {numClickUpgrade}</h1>
-                <h1> Price: {costClickUpgrade}</h1>
-              </div>
-            </div>
-            <div className="upgrade-zone">
-              <div className="click-upgrade">
-                <h1> Tsak's Tesla Shop </h1>
-                <img id="tesla" src={tesla} alt="tesla" width="200" height="150"></img>
-              </div>
-            </div>
-          </div>
-          {/* TESLA SHOP END*/}
-
-          {/* DINER SHOP END*/}
-          <div className="upgrade-container">
-            <div className="upgrade-button">
-              <div className="clicker-upgrade">
-                <img id="clickUpgradeID" src={clicker} alt="clickUpgrade" onClick={() => buyClickUpgrade()}></img>
-                <h1> click Upgrade {numClickUpgrade}</h1>
-                <h1> Price: {costClickUpgrade}</h1>
-              </div>
-            </div>
-            <div className="upgrade-zone">
-              <div className="click-upgrade">
-                <div className="dansDiner">
-                  <h1> Dan's Diner </h1>
-                  <img id="food" alt="food" width="200" height="150"></img>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* DINER SHOP END*/}
-
-          {/* MEDBAY SHOP END*/}
-          <div className="upgrade-container">
-            <div className="upgrade-button">
-              <div className="clicker-upgrade">
-                <img id="clickUpgradeID" src={clicker} alt="clickUpgrade" onClick={() => buyClickUpgrade()}></img>
-                <h1> click Upgrade {numClickUpgrade}</h1>
-                <h1> Price: {costClickUpgrade}</h1>
-              </div>
-            </div>
-            <div className="upgrade-zone">
-              <div className="click-upgrade">
-                <h1> Bricker's Medbay </h1>
-                <img id="medbay" alt="medbay" width="200" height="150"></img>
-              </div>
-            </div>
-          </div>
-          {/* MEDBAY SHOP END*/}
 
 
         </div>

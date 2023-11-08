@@ -20,6 +20,7 @@ const ShadowGarden = (props) => {
         };
     },);
 
+    //maybe all these could be methods in cookie.jsx, and have it be th eparent to popup and shadow garden and make the pop up occur in cookies.jsx so i can pass info from both comps up
     const buyShadow = () => {
         setNumShadows(n => n + 1)
         setOpenShop(true)

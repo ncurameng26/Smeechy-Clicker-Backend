@@ -1,21 +1,21 @@
-.upgrade-container{
+.upgrade-container {
     display: flex;
     justify-content: space-evenly;
     border-bottom: solid;
     margin-top: 5px;
     margin-bottom: 5px;
-    height: 250px;
-    
+    height: auto;
+
 }
 
-.upgrade-container img{
+.upgrade-container img {
     padding-top: 10px;
 }
 
-.total-upgrade-container{
+.total-upgrade-container {
     margin-left: 20%;
     margin-right: 20%;
-    overflow-y:auto;
+    overflow-y: auto;
     height: 1000px;
     border-left: solid;
     border-right: solid;
@@ -24,15 +24,23 @@
 
 
 
-.upgrade-button{
-    flex: 0 0 15%; 
+.upgrade-button {
+    flex: 0 0 15%;
 }
 
-.upgrade-button img{
-    height:150px;
+.upgrade-button img {
+    height: 150px;
     width: 150px;
 }
 
-.upgrade-zone{
-    flex: 0 0 85%; 
+.upgrade-zone {
+    flex: 0 0 85%;
+}
+
+.zone {
+    flex: 0 0 85%;
+}
+
+.upgrade {
+    flex: 0 0 15%;
 }

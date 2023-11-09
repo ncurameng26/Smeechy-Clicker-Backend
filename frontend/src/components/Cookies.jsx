@@ -1,52 +1,41 @@
-// import React from 'react'
-// import { useState, useEffect } from 'react'
-// import "./styles/cookie-styles.css"
-// import "./styles/upgrade-styles.css"
-// import peach from "../assets/peach.png"
-// // import clicker from "../assets/clicker.png"
-// // import divineDogs from "../assets/divineDog.gif"
-// // import tesla from "../assets/tesla.png"
-// // import rabbit from "../assets/rabbitEscape.gif"
-// // import Popup from "./ShopPopup"
-// // import elephant from "../assets/maxElephant.gif"
-// // import ShadowGarden from './ShadowGarden'
+import React from 'react'
+import "./styles/cookie-styles.css"
+import { useSelector, useDispatch } from 'react-redux' //Use Dispatch modifies values and use selector accesses them
+import { cookieCount } from "../features/cookie.js"
+import "./styles/upgrade-styles.css"
+import peach from "../assets/peach.png"
+import { useEffect } from 'react'
 
-// // import { buyDivineDog } from "./ShopPopup"
+const Cookies = () => {
 
 
+  const cookie = useSelector((state) => state.cookie.value)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const interval = setInterval(() => autoClickCookie(), 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  },);
 
 
-// const Cookies = () => {
+  const autoClickCookie = () => {
+    dispatch(cookieCount({ numCookies: cookie.numCookies + cookie.cookiesPerSecond, cookiePerClick: cookie.cookiePerClick, cookiesPerSecond: cookie.cookiesPerSecond }))
+  }
 
-//   const [cookiesPerSecond, setCookiesPerSecond] = useState(0)
-//   const [cookieCount, setCookieCount] = useState(100)
-//   const [cookiePerClick, setCookiePerClick] = useState(1)
+  const clickCookie = () => {
+    dispatch(cookieCount({ numCookies: cookie.numCookies + cookie.cookiePerClick, cookiePerClick: cookie.cookiePerClick, cookiesPerSecond: cookie.cookiesPerSecond }))
+  }
 
-//   useEffect(() => {
-//     const interval = setInterval(() => clickCookiePerSecond(), 1000);
-//     console.log("cookieCount")
-//     return () => {
-//       clearInterval(interval);
-//     };
-//   },);
+  return (
+    <div>
+      <div className="cookie_container">
+        <img id="cookieID" src={peach} alt="cookie" onClick={() => clickCookie()} width="400" height="400"></img>
+      </div>
+    </div>
+  )
+}
 
-//   const clickCookiePerSecond = () => {
-//     setCookieCount(n => n + cookiesPerSecond)
-//   }
-
-//   const clickCookie = () => {
-//     setCookieCount((cookieCount => cookieCount + cookiePerClick))
-//   }
-
-//   return (
-//     <div>
-//       <h1> Cookies per click : {cookiePerClick} </h1>
-//       <h1> Cookies per second : {cookiesPerSecond} </h1>
-
-
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Cookies
+export default Cookies

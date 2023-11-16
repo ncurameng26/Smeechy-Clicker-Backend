@@ -5,6 +5,7 @@ import "./components/styles/upgrade-styles.css"
 import "./components/styles/home-page-styles.css"
 import Scoreboard from './components/Scoreboard'
 import StartPage from './components/StartPage';
+import Signup from './components/Signup';
 
 
 
@@ -14,6 +15,8 @@ const App = () => {
     <div>
       <StartPage />
       <Scoreboard />
+      <Signup />
+
     </div >
 
   );

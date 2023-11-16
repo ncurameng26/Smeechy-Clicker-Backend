@@ -7,8 +7,6 @@ import peach from "../assets/peach.png"
 import { useEffect } from 'react'
 
 const Cookies = () => {
-
-
   const cookie = useSelector((state) => state.cookie.value)
 
   const dispatch = useDispatch()
@@ -32,7 +30,7 @@ const Cookies = () => {
   return (
     <div>
       <div className="cookie_container">
-        <img id="cookieID" src={peach} alt="cookie" onClick={() => clickCookie()} width="400" height="400"></img>
+        <img id="cookieID" src={peach} alt="cookie" onClick={() => { clickCookie(); }} width="300" height="300"></img>
       </div>
     </div>
   )

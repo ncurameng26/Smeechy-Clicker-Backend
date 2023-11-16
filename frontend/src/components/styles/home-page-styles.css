@@ -1,43 +1,50 @@
-body{
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather:ital,wght@1,300&family=Pacifico&family=Skranji&display=swap");
+
+body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background-color: slategray;
+    background-color: black;
 }
 
-.smeechyTitle{
-    font-size: 100px;
-    color: blue;
-    text-align:center;
+.smeechyTitle {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    font-family: 'Skranji', cursive;
+    margin-bottom: 0px;
 }
 
-.peachButton{
-    background-size: cover; 
+.peachButton {
+    background-size: cover;
     height: auto;
     width: auto;
 }
 
 
-.buttonContainer{
+.buttonContainer {
     width: auto;
 }
 
-.buttonContainer button{
+.buttonContainer button {
     margin-top: 20px;
     margin-left: 5px;
     margin-right: 5px;
     height: 50px;
 }
 
-.topText{
+.topText {
     font-size: 80px;
 }
 
-.headerContainer{
-    margin-bottom: 50px;
+
+h1 {
+    margin-top: 0px;
+    font-family: 'Skranji', cursive;
+    margin-bottom: 0px;
 }
 
-h1{
-    margin-top: 0px;
-    margin-bottom: 0px;
+.numSmeeches {
+    font-size: 30px;
+    color: white;
 }

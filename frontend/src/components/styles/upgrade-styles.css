@@ -1,46 +1,104 @@
-.upgrade-container {
-    display: flex;
-    justify-content: space-evenly;
-    border-bottom: solid;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    height: auto;
-
-}
-
 .upgrade-container img {
     padding-top: 10px;
 }
 
 .total-upgrade-container {
     margin-left: 20%;
+    margin-bottom: 20px;
     margin-right: 20%;
     overflow-y: auto;
-    height: 1000px;
+    height: 500px;
     border-left: solid;
     border-right: solid;
     border-top: solid;
+    background-color: #303030;
+    border-radius: 20px;
 }
 
-
-
-.upgrade-button {
-    flex: 0 0 15%;
+.upgradeText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.upgradeText h1 {
+    text-align: center;
+}
+
 
 .upgrade-button img {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+}
+
+
+#divineDogsID {
+    height: 80px;
+    width: 80px;
+}
+
+#frogID {
+    height: 80px;
+    width: 80px;
+}
+
+#rabbitID {
+    height: 80px;
+    width: 80px;
+}
+
+#teslaID {
+    height: 120px;
+    width: 120px;
+}
+
+#foodID {
+    height: 120px;
+    width: 120px;
+}
+
+.main {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 1px;
+    border-bottom: solid;
+    height: 200px;
+}
+
+.col-left {
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .upgrade-zone {
-    flex: 0 0 85%;
+    max-width: 500px;
 }
 
-.zone {
-    flex: 0 0 85%;
+.col-right {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    margin-left: 16%;
 }
 
-.upgrade {
-    flex: 0 0 15%;
+h1 {
+    font-size: 20px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.firstTwo {
+    display: flex;
+}
+
+.secondTwo {
+    display: flex;
 }

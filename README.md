@@ -1,4 +1,4 @@
-﻿# IdleGameV2
+﻿# Smeechy Clicker
 
 Dependencies:
 Node

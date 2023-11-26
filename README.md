@@ -1,4 +1,5 @@
 ﻿# Smeechy Clicker
+ This app is run at smeechyclicker.online
 
  Welcome to smeechy clicker repo, this is a full stack game I made using React and Django. This was the hardest project I've done and a lot of the technology was new to me. I had never used Django, or hosted a website before so there was a large learning curb.
 
